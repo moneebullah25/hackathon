@@ -1,4 +1,3 @@
-"use client";
 import { getProductsWithID, Product } from "@/lib/getProducts";
 import ProductDetailView from "@/components/section/ProductDetailView";
 
