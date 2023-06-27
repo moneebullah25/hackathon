@@ -11,3 +11,11 @@ Design Navbar and Hero components
 [Used Icons from Lucid (default from Shadcn-ui)](https://lucide.dev/icon)
 
 [Creating a clone of the mention site](https://full-stack-ecommerce-clothing-web.vercel.app/)
+
+Used the following Tech Stack
+- Tailwind CSS for styling
+- React Redux Toolkit for Add to Cart functionality
+- Vercel Postrges to save Cart data
+- Sanity for CMS
+- Stripe for Payments 
+- Used Drizzle for Type ORM
