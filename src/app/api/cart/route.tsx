@@ -15,7 +15,6 @@ export const GET = async (request: NextRequest) => {
 
 export const POST = async (request: NextRequest) => {
   const req = await request.json();
-  console.log(req);
 
   const userId = v4();
   const user_id = cookies().get("user_id")?.value

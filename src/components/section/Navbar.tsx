@@ -8,7 +8,6 @@ import { Search, ShoppingCartIcon } from "lucide-react";
 import hamburger from "public/hamburger.svg";
 import close from "public/close.svg";
 import { useRouter } from "next/navigation";
-import CartItemNo from "../CartItemNo";
 import { useAppSelector } from "@/store/hooks";
 
 function NavBar() {
