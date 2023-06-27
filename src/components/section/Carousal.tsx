@@ -1,4 +1,3 @@
-"use client";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import DisplayProduct from "./DisplayProduct";
@@ -28,7 +27,7 @@ const Carousal = (products: Product[]) => {
 
     return (
     <div>
-      <Carousel arrows={false} responsive={responsive}>
+      <Carousel arrows={false} responsive={responsive} ssr={true}>
         {Object.values(products).map((product) => (
           <DisplayProduct {...product} key={product._id} />
         ))}
