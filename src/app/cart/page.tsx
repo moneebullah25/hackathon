@@ -25,6 +25,17 @@ export default function Cart() {
     const data = await response.json();
     if (data.session) {
       stripe?.redirectToCheckout({ sessionId: data.session.id });
+      cartList.map(async (product) => {
+        const response = await fetch("/api/cart/", {
+          method: "POST",
+          cache: "no-cache",
+          body: JSON.stringify({
+            product_id: product._id,
+            quantity: product.quantity
+          })
+        })
+        console.log(response);
+      })
     }
   };
 
