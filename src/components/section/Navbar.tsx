@@ -4,12 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import logo from "public/Logo.webp";
-import { Search, ShoppingCart } from "lucide-react";
+import { Search, ShoppingCartIcon } from "lucide-react";
 import hamburger from "public/hamburger.svg";
 import close from "public/close.svg";
+import { useRouter } from "next/navigation";
+import CartItemNo from "../CartItemNo";
+import { useAppSelector } from "@/store/hooks";
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
+  const router = useRouter();
+  const cartItems = useAppSelector((state) => state.cart.cartItems);
   return (
     <div>
       <nav className="w-full top-0 left-0 right-0 z-10">
@@ -77,10 +82,13 @@ function NavBar() {
               className="rounded-r"
             ></input>
           </div>
-          <div className="hidden lg:block p-2 rounded-full bg-gray-300 hover:cursor-pointer mb-1">
-            <ShoppingCart className="relative hover:scale-110" />
+          <div
+            className="hidden lg:block p-2 rounded-full bg-gray-300 hover:cursor-pointer mb-1"
+            onClick={() => router.push("/cart")}
+          >
+            <ShoppingCartIcon className="relative hover:scale-110" />
             <span className="absolute top-[30px] right-[84px] h-6 w-6 text-center rounded-full bg-[#f02d34] text-white">
-              0
+              {cartItems.length}
             </span>
           </div>
         </div>

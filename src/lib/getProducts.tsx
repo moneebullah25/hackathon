@@ -1,6 +1,7 @@
 import { client } from "../../sanity/lib/client";
 import { Image as SImage } from "sanity";
 
+
 export enum CATEGORY {
   MALE= "912509f4-86a5-4561-8e4d-b0a534ee4262",
   KID= "4a4dd79a-2675-4da8-a24c-0552bb9b1a52",
@@ -22,6 +23,8 @@ export interface Product {
   categorySet: {
     [key: number]: string;
   };
+  care: string[];
+  quantity: number;
 }
 
 export const getProducts = async (category: string | null) => {
@@ -35,11 +38,29 @@ export const getProducts = async (category: string | null) => {
     categorySet,
     category -> {
       name
-    }
+    },
+    care
   }`;
 
   const res = await client.fetch(query);
   return res;
 };
 
+export const getProductsWithID = async (id: string | null) => {
+  const query = `*[_type=="product"${id ? ` && _id=="${id}"` : ""}] {
+    title,
+    images,
+    description,
+    _id,
+    price,
+    sizeSet,
+    categorySet,
+    category -> {
+      name
+    },
+    care
+  }`;
 
+  const res = await client.fetch(query);
+  return res;
+};

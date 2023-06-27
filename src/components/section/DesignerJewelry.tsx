@@ -55,7 +55,7 @@ const DesignerJewelry = () => {
         <div className="flex flex-row justify-between space-x-8">
           <Image src={feature} alt="picture" className="w-[285px] h-[350px]" />
           <div>
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
+            <p className="leading-7 [&:not(:first-child)]:mt-6 lg:max-w-xl">
               This piece is ethically crafted in our small family-owned workshop
               in Peru with unmatched attention to detail and care. The Natural
               color is the actual natural color of the fiber, undyed and 100%

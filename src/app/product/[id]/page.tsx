@@ -1,20 +1,10 @@
-import Image from "next/image";
+"use client";
+import { getProductsWithID, Product } from "@/lib/getProducts";
+import ProductDetailView from "@/components/section/ProductDetailView";
 
-import muscle from "public/Muscle Tank (T Shirts) 75.png";
-
-const page = ({ params }: { params: { id: string } }) => {
+export default async function Page({ params }: { params: { id: string } }) {
+  const product: Product = (await getProductsWithID(params.id))[0];
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-center">
-      <div className="flex flex-row justify-between items-start">
-        <div>
-          <Image src={muscle} alt="muscle" width={100} height={100} />
-          <Image src={muscle} alt="muscle" width={100} height={100} className="p-4"/>
-          <Image src={muscle} alt="muscle" width={100} height={100} className="p-4"/>
-        </div>
-        <Image src={muscle} alt="muscle" />
-      </div>
-    </div>
+    <ProductDetailView {...product} />
   );
-};
-
-export default page;
+}

@@ -47,11 +47,13 @@ const ProductView = async () => {
           {products.map((product) => (
             <div
               className="hover:scale-105 transition cursor-pointer m-6"
-              onClick={() => router.push(`/${product._id}`)}
+              key={product._id}
+              onClick={() => router.push(`/product/${product._id}`)}
             >
               <Image
                 width={380}
                 height={400}
+                key={product._id}
                 className="object-cover"
                 src={urlForImage(product.images[0]).url()}
                 alt={`${product.title}`}
