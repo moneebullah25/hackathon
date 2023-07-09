@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { Product } from "@/lib/getProducts";
 import Image from "next/image";
-import { urlForImage } from "../../../../sanity/lib/image";
+import { urlForImage } from "../../sanity/lib/image";
 
 const ImageViewer = (product: Product) => {
   const [currentImage, setCurrentImage] = useState(product.images[0]);
@@ -17,11 +17,18 @@ const ImageViewer = (product: Product) => {
             key={product._id}
             onMouseEnter={() => setCurrentImage(image)}
             alt={`${product.title}`}
-            width={100} height={100}
+            width={100}
+            height={100}
           />
         ))}
       </div>
-      <Image src={urlForImage(currentImage).url()} className="object-cover w-570 h-612" height={612} width={570} alt="feature" />
+      <Image
+        src={urlForImage(currentImage).url()}
+        className="object-cover w-570 h-612"
+        height={612}
+        width={570}
+        alt="feature"
+      />
     </div>
   );
 };
