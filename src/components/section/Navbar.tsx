@@ -7,8 +7,10 @@ import logo from "public/Logo.webp";
 import { Search, ShoppingCartIcon } from "lucide-react";
 import hamburger from "public/hamburger.svg";
 import close from "public/close.svg";
+import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/store/hooks";
+import { SignedIn, SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -80,6 +82,20 @@ function NavBar() {
               placeholder="What you are looking for"
               className="rounded-r"
             ></input>
+          </div>
+          <div className="hidden lg:block">
+            <SignedIn>
+              {/* Mount the UserButton component */}
+              <UserButton afterSignOutUrl="/" />
+            </SignedIn>
+            <SignedOut>
+              {/* Signed out users get sign in button */}
+              <SignInButton mode="modal">
+                <Button variant={"default"} size={"lg"}>
+                  Sign In
+                </Button>
+              </SignInButton>
+            </SignedOut>
           </div>
           <div
             className="hidden lg:block p-2 rounded-full bg-gray-300 hover:cursor-pointer mb-1"

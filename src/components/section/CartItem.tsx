@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState, FC } from "react";
-import { Image as IImage } from "sanity";
 
 import { Trash2 } from "lucide-react";
 import { urlForImage } from "../../../sanity/lib/image";
