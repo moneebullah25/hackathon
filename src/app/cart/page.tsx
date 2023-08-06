@@ -34,7 +34,6 @@ export default function Cart() {
             quantity: product.quantity
           })
         })
-        console.log(response);
       })
     }
   };
