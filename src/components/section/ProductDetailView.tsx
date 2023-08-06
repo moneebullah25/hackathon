@@ -45,7 +45,7 @@ const ProductDetailView = (product: Product) => {
             </h4>
             <Button onClick={() => addItem(product)}>Add to Cart</Button>
             <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight">
-              {"  $" + product.price}.00
+              {"  PKR" + product.price}.00
             </h4>
           </div>
         </div>

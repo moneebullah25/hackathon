@@ -70,7 +70,7 @@ const CartItem: FC<{ item: Product }> = ({ item }) => {
             </button>
           </div>
           <span className="font-bold font-inconsolata">
-            {item.price * quantity} $
+            {item.price * quantity} PKR
           </span>
         </div>
         <div className="text-[22px] cursor-pointer">

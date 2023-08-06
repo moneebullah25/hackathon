@@ -31,9 +31,9 @@ const Promotions = () => {
               Flex Sweatshirt
             </h3>
             <h3 className="pl-4 pt-1 text-black text-lg text-left">
-              <span className="line-through">$100.00</span>{" "}
+              <span className="line-through">PKR 100.00</span>{" "}
               <span className="text-center text-xl no-underline font-bold">
-                $75.00
+                PKR 75.00
               </span>
             </h3>
             <Image src={event2} alt="event2" />
@@ -44,9 +44,9 @@ const Promotions = () => {
               Flex Push Button Bomber
             </h3>
             <h3 className="pl-4 pt-1 text-black text-lg text-left">
-              <span className="line-through">$225.00</span>{" "}
+              <span className="line-through">PKR 225.00</span>{" "}
               <span className="text-center text-xl no-underline font-bold">
-                $175.00
+                PKR 175.00
               </span>
             </h3>
             <Image src={event3} alt="event3" />

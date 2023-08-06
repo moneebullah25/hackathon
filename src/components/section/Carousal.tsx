@@ -1,7 +1,10 @@
+"use client";
+import {useRouter} from "next/navigation"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import DisplayProduct from "./DisplayProduct";
 import { Product } from "@/lib/getProducts";
+import Image from "next/image";
+import { urlForImage } from "../../../sanity/lib/image";
 
 const responsive = {
   superLargeDesktop: {
@@ -24,13 +27,30 @@ const responsive = {
 };
 
 const Carousal = (products: Product[]) => {
-
+    const router = useRouter();
     return (
     <div>
       <Carousel arrows={false} responsive={responsive} ssr={true}>
-        {Object.values(products).map((product) => (
-          <DisplayProduct {...product} key={product._id} />
-        ))}
+          {Object.values(products).map((product) => (
+            <div
+              className="hover:scale-105 transition cursor-pointer m-6"
+              onClick={() => router.push(`/product/${product._id}`)}
+            >
+              <Image
+                width={380}
+                height={400}
+                className="object-cover"
+                src={urlForImage(product.images[0]).url()}
+                alt={`${product.title}`}
+              />
+              <h3 className="mt-2 scroll-m-20 text-xl font-semibold tracking-tight">
+                {product.title}
+              </h3>
+              <h3 className="mt-2 scroll-m-20 text-xl font-semibold tracking-tight">
+                PKR{product.price}
+              </h3>
+            </div>
+          ))}
       </Carousel>
     </div>
   );

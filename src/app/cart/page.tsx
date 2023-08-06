@@ -68,7 +68,7 @@ export default function Cart() {
                 </div>
                 <div className="flex items-center justify-between font-arimo gap-x-6">
                   <span>Sub Total</span>
-                  <span className="font-bold">{subTotal} $</span>
+                  <span className="font-bold">{subTotal} PKR</span>
                 </div>
                 <button
                   className="bg-black text-white py-3 font-inconsolata rounded-lg"
