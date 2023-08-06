@@ -28,7 +28,7 @@ const Hero = () => {
           Start Shopping
         </Button>
 
-        <div className="flex flex-row justify-between items-center space-x-3 mt-12">
+        <div className="hidden lg:flex flex-row justify-between items-center space-x-3 mt-12">
           <Image src={Feature1} alt="Feature1" />
           <Image src={Feature2} alt="Feature2" />
           <Image src={Feature3} alt="Feature3" />

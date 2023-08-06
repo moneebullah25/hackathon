@@ -72,6 +72,31 @@ function NavBar() {
                     All Products
                   </Link>
                 </li>
+                <li className="lg:hidden flex justify-center mb-6">
+                  <SignedIn>
+                    {/* Mount the UserButton component */}
+                    <UserButton afterSignOutUrl="/" />
+                  </SignedIn>
+                  <SignedOut>
+                    {/* Signed out users get sign in button */}
+                    <SignInButton mode="modal">
+                      <Button variant={"default"} size={"lg"}>
+                        Sign In
+                      </Button>
+                    </SignInButton>
+                  </SignedOut>
+                </li>
+                <li>
+                  <div
+                    className="lg:hidden flex justify-center p-2 rounded-full bg-gray-300 hover:cursor-pointer mb-1"
+                    onClick={() => router.push("/cart")}
+                  >
+                    <ShoppingCartIcon className="relative hover:scale-110" />
+                    <span className="absolute h-6 w-6 ml-12 text-center rounded-full bg-[#f02d34] text-white">
+                      {cartItems.length}
+                    </span>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -83,7 +108,16 @@ function NavBar() {
               className="rounded-r"
             ></input>
           </div>
-          <div className="hidden lg:block">
+          <div
+            className="hidden p-2 rounded-full bg-gray-300 hover:cursor-pointer mb-1 lg:flex lg:flex-row lg:space-x-2 relative"
+            onClick={() => router.push("/cart")}
+          >
+            <ShoppingCartIcon className="relative hover:scale-110" />
+            <span className="absolute h-6 w-6 top-0 right-0 text-center rounded-full bg-[#f02d34] text-white">
+              {cartItems.length}
+            </span>
+          </div>
+          <div className="hidden lg:block h-8 w-8">
             <SignedIn>
               {/* Mount the UserButton component */}
               <UserButton afterSignOutUrl="/" />
@@ -96,15 +130,6 @@ function NavBar() {
                 </Button>
               </SignInButton>
             </SignedOut>
-          </div>
-          <div
-            className="hidden lg:block p-2 rounded-full bg-gray-300 hover:cursor-pointer mb-1"
-            onClick={() => router.push("/cart")}
-          >
-            <ShoppingCartIcon className="relative hover:scale-110" />
-            <span className="absolute top-[30px] right-[84px] h-6 w-6 text-center rounded-full bg-[#f02d34] text-white">
-              {cartItems.length}
-            </span>
           </div>
         </div>
       </nav>
