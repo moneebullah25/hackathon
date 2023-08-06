@@ -11,11 +11,11 @@ const DisplayProduct = (product: Product) => {
       <Image
         width={250}
         height={270}
-        className="object-cover hover:scale-105 transition cursor-pointer m-6"
+        className="object-cover hover:scale-105 transition cursor-pointer"
         src={urlForImage(product.images[0]).url()}
         alt={`${product.title}`}
       />
-      <h3 className="scroll-m-20 text-lg font-semibold tracking-tight" >
+      <h3 className="scroll-m-20 text-lg font-semibold tracking-tight mt-4" >
         {product.title}
       </h3>
       <h3 className="scroll-m-20 text-lg font-medium tracking-tight">

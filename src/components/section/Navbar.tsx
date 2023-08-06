@@ -105,7 +105,7 @@ function NavBar() {
             <input
               type="text"
               placeholder="What you are looking for"
-              className="rounded-r"
+              className="rounded-r outline-none"
             ></input>
           </div>
           <div

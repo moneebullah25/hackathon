@@ -38,6 +38,7 @@
     "react-hot-toast": "^2.4.1",
     "react-multi-carousel": "^2.8.4",
     "react-redux": "^8.1.1",
+    "redux-persist": "^6.0.0",
     "sanity": "^3.11.5",
     "stripe": "^12.10.0",
     "tailwind-merge": "^1.12.0",
