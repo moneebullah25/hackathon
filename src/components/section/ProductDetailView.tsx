@@ -16,8 +16,8 @@ const ProductDetailView = (product: Product) => {
 
   return (
     <div>
-      <div className="mx-[3rem] lg:mx-[6rem] my-6">
-        <div className="flex flex-col lg:flex-row justify-between items-start space-y-8 space-x-4">
+      <div className="mx-[1rem] lg:mx-[6rem] my-6">
+        <div className="flex flex-col lg:flex-row justify-between items-start space-y-8 ">
           <ImageViewer {...product} />
           <div className="shrink-0">
             <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -29,7 +29,7 @@ const ProductDetailView = (product: Product) => {
             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
               SELECT SIZE
             </h4>
-            <div className="flex flex-row space-x-4">
+            <div className="flex flex-row sm:space-x-1 lg:space-x-4">
               {Object.values(product.sizeSet).map((size, index) => (
                 <div
                   className="flex w-12 h-12 rounded-full hover:shadow-lg items-center justify-center"
@@ -39,7 +39,7 @@ const ProductDetailView = (product: Product) => {
                 </div>
               ))}
             </div>
-            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight flex flex-row justify-start items-center">
+            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight my-4 flex flex-row justify-start items-center">
               QUANTITY:{"  "}
               <QtyCounter />
             </h4>
