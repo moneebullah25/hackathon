@@ -35,6 +35,7 @@ const Carousal = (products: Product[]) => {
             <div
               className="hover:scale-105 transition cursor-pointer m-6"
               onClick={() => router.push(`/product/${product._id}`)}
+              key={product._id}
             >
               <Image
                 width={380}
